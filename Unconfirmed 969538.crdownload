@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Homepage / Live Blog -->
+  <url>
+    <loc>https://azadilive.com/</loc>
+    <lastmod>2026-01-13</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+    <news:news>
+      <news:publication>
+        <news:name>Azadi Live</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-01-13</news:publication_date>
+      <news:title>Iran Revolution 2026: Live Coverage - Day 17</news:title>
+      <news:keywords>Iran protests, Iran revolution, Tehran, death toll, Trump, sanctions</news:keywords>
+    </news:news>
+  </url>
+  
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://azadilive.com/privacy.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Contact -->
+  <url>
+    <loc>https://azadilive.com/contact.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Thank You (form submission) -->
+  <url>
+    <loc>https://azadilive.com/thank-you.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+
+</urlset>
