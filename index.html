@@ -1,0 +1,2157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZADI LIVE — Live Coverage of Iran Revolution 2026 | Breaking News & Streams</title>
+    <meta name="description" content="Live coverage of Iran's 2026 revolution. Breaking news, live streams from Iran International, BBC Persian, VOA. Updated continuously. زن زندگی آزادی">
+    <meta name="keywords" content="Iran protests, Iran revolution 2026, Iran news live, Tehran protests, Iranian uprising, آزادی, زن زندگی آزادی, Iran International live, BBC Persian live, HRANA, Iran human rights">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="AzadiLive">
+    <link rel="canonical" href="https://azadilive.com">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="AZADI LIVE — Iran Revolution 2026 Live Coverage">
+    <meta property="og:description" content="Breaking news, live streams, and real-time updates from Iran's historic uprising. 4 live news channels, verified reports, safety resources.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://azadilive.com">
+    <meta property="og:site_name" content="Azadi Live">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AZADI LIVE — Iran Revolution 2026">
+    <meta name="twitter:description" content="Live streams, breaking news, and safety resources for Iran's uprising. Updated continuously.">
+    
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           CSS VARIABLES - Easy to customize colors
+           ============================================ */
+        :root {
+            /* Iranian Flag Colors */
+            --iran-green: #239F40;
+            --iran-red: #DA0000;
+            --iran-white: #FFFFFF;
+            
+            /* Dark Theme */
+            --bg-primary: #0A0A0A;
+            --bg-secondary: #141414;
+            --bg-card: #1A1A1A;
+            --bg-elevated: #222222;
+            
+            /* Text */
+            --text-primary: #F5F5F5;
+            --text-secondary: #A0A0A0;
+            --text-muted: #666666;
+            
+            /* Accents */
+            --accent-live: #DA0000;
+            --accent-success: #239F40;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-xxl: 4rem;
+            
+            /* Typography */
+            --font-display: 'Oswald', sans-serif;
+            --font-body: 'Source Sans 3', sans-serif;
+        }
+
+        /* ============================================
+           RESET & BASE STYLES
+           ============================================ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--iran-green);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--iran-white);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ============================================
+           LAYOUT CONTAINERS
+           ============================================ */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-sm);
+        }
+
+        .section {
+            padding: var(--space-xl) 0;
+        }
+
+        /* ============================================
+           HEADER & LIVE INDICATOR
+           ============================================ */
+        .header {
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--bg-elevated);
+            padding: var(--space-sm) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-svg {
+            height: 50px;
+            width: auto;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .current-time {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .quick-exit {
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            border: 1px solid var(--text-muted);
+            padding: 0.4rem 0.75rem;
+            border-radius: 4px;
+            font-family: var(--font-display);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .quick-exit:hover {
+            background: var(--iran-red);
+            border-color: var(--iran-red);
+            color: white;
+        }
+
+        .header-socials {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .header-socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--bg-elevated);
+            border-radius: 4px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.15s ease;
+        }
+
+        .header-socials a:hover {
+            background: var(--iran-green);
+            border-color: var(--iran-green);
+            color: white;
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            background: 
+                linear-gradient(135deg, rgba(35, 159, 64, 0.1) 0%, transparent 50%),
+                linear-gradient(225deg, rgba(218, 0, 0, 0.1) 0%, transparent 50%),
+                var(--bg-primary);
+            padding: var(--space-sm) 0;
+            text-align: center;
+            border-bottom: 1px solid var(--bg-elevated);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.25rem;
+            background: linear-gradient(90deg, var(--iran-green), var(--iran-white), var(--iran-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto var(--space-xs);
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* ============================================
+           BREAKING NEWS TICKER
+           ============================================ */
+        .ticker {
+            background: var(--accent-live);
+            padding: var(--space-xs) 0;
+            overflow: hidden;
+        }
+
+        .ticker-content {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            animation: scroll 30s linear infinite;
+        }
+
+        .ticker-label {
+            font-family: var(--font-display);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+            padding: 0 var(--space-sm);
+            background: rgba(0,0,0,0.3);
+        }
+
+        .ticker-text {
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ============================================
+           SECTION HEADERS
+           ============================================ */
+        .section-header {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--bg-elevated);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+
+        .section-icon {
+            width: 4px;
+            height: 24px;
+            background: var(--iran-green);
+        }
+
+        .last-updated {
+            margin-left: auto;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* ============================================
+           WATCH LIVE CARDS (New clean approach)
+           ============================================ */
+        .watch-live-card {
+            display: block;
+            background: linear-gradient(135deg, var(--iran-green) 0%, #1a7a30 100%);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            text-decoration: none;
+            color: white;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .watch-live-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(35, 159, 64, 0.3);
+            color: white;
+            border-color: white;
+        }
+
+        .watch-live-content {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        .watch-live-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .watch-live-text {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .watch-live-text h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.25rem;
+        }
+
+        .watch-live-text p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .watch-live-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--iran-red);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        .watch-cards-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+        }
+
+        .watch-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: var(--space-md);
+            background: var(--bg-card);
+            border: 1px solid var(--bg-elevated);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+
+        .watch-card:hover {
+            border-color: var(--iran-green);
+            background: var(--bg-elevated);
+            transform: translateY(-2px);
+        }
+
+        .watch-card-icon {
+            font-size: 2rem;
+        }
+
+        .watch-card-name {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .watch-card-action {
+            font-size: 0.85rem;
+            color: var(--iran-green);
+        }
+
+        /* ============================================
+           FEATURED STREAM (LARGE)
+           ============================================ */
+        /* ============================================
+           LIVE STREAMS 2x2 GRID
+           ============================================ */
+        .streams-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+        }
+
+        .stream-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--bg-elevated);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .stream-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--iran-green);
+        }
+
+        .stream-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            background: var(--bg-secondary);
+        }
+
+        .stream-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .stream-info {
+            padding: var(--space-sm) var(--space-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stream-source {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .stream-desc {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .stream-live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--iran-red);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .stream-live-dot {
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Mobile-only: More streams links (hidden on desktop) */
+        .mobile-more-streams {
+            display: none;
+            margin-top: var(--space-sm);
+            padding: var(--space-sm);
+            background: var(--bg-card);
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .mobile-more-streams p {
+            color: var(--text-muted);
+            margin-bottom: var(--space-xs);
+        }
+
+        .mobile-more-streams a {
+            display: inline-block;
+            margin: 0 var(--space-xs);
+            padding: var(--space-xs) var(--space-sm);
+            background: var(--bg-elevated);
+            border-radius: 4px;
+            color: var(--iran-green);
+            font-weight: 600;
+        }
+
+        /* Color-coded news tags */
+        .tag-execution {
+            display: inline-block;
+            background: #DC2626;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 8px;
+            text-transform: uppercase;
+        }
+
+        .tag-strike {
+            display: inline-block;
+            background: #F59E0B;
+            color: black;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 8px;
+            text-transform: uppercase;
+        }
+
+        .tag-military {
+            display: inline-block;
+            background: #7C3AED;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 8px;
+            text-transform: uppercase;
+        }
+
+        .tag-safety {
+            display: inline-block;
+            background: #10B981;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 8px;
+            text-transform: uppercase;
+        }
+
+        .tag-update {
+            display: inline-block;
+            background: #3B82F6;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-right: 8px;
+            text-transform: uppercase;
+        }
+
+        .stream-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-secondary);
+            color: var(--text-muted);
+            text-align: center;
+            padding: var(--space-md);
+        }
+
+        .stream-placeholder-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .stream-info {
+            padding: var(--space-sm);
+        }
+
+        .stream-source {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .stream-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .stream-link {
+            display: inline-block;
+            margin-top: var(--space-xs);
+            padding: 0.5rem 1rem;
+            background: var(--iran-green);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: background 0.2s ease;
+        }
+
+        .stream-link:hover {
+            background: #1a7a30;
+            color: white;
+        }
+
+        /* ============================================
+           TWITTER EMBED SECTION
+           ============================================ */
+        .twitter-section {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: var(--space-md);
+            border: 1px solid var(--bg-elevated);
+            margin-bottom: var(--space-lg);
+        }
+
+        .twitter-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: var(--space-md);
+            color: var(--text-secondary);
+        }
+
+        .twitter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .twitter-feed {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            min-height: 400px;
+            overflow: hidden;
+        }
+
+        /* ============================================
+           SOCIAL FEEDS SECTION
+           ============================================ */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .social-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: var(--space-md);
+            border: 1px solid var(--bg-elevated);
+        }
+
+        .social-card-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid var(--bg-elevated);
+        }
+
+        .social-platform {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm);
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            transition: background 0.2s ease;
+        }
+
+        .social-link:hover {
+            background: var(--bg-elevated);
+        }
+
+        .social-link-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-elevated);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .social-link-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .social-link-info p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ============================================
+           LIVE RESOURCES SECTION
+           ============================================ */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .resource-card {
+            display: flex;
+            gap: var(--space-md);
+            padding: var(--space-md);
+            background: var(--bg-card);
+            border: 1px solid var(--bg-elevated);
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .resource-card:hover {
+            background: var(--bg-elevated);
+            border-color: var(--iran-green);
+            transform: translateY(-2px);
+        }
+
+        .resource-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .resource-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .resource-info p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-source {
+            font-size: 0.75rem;
+            color: var(--iran-green);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ============================================
+           BREAKING UPDATES SECTION
+           ============================================ */
+        .safety-alert {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            background: linear-gradient(135deg, rgba(218, 0, 0, 0.15) 0%, rgba(218, 0, 0, 0.05) 100%);
+            border: 1px solid var(--iran-red);
+            border-radius: 8px;
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .safety-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .safety-content {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+
+        .safety-content strong {
+            color: var(--iran-red);
+        }
+
+        /* Execution Alert - Prominent red banner */
+        .execution-alert {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.25) 0%, rgba(220, 38, 38, 0.1) 100%);
+            border: 2px solid #DC2626;
+            border-radius: 8px;
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .execution-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .execution-content strong {
+            color: #DC2626;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .execution-content p {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .execution-action {
+            display: inline-block;
+            background: #DC2626;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .execution-action:hover {
+            background: #B91C1C;
+        }
+
+        .updates-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .update-item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: var(--space-md);
+            padding: var(--space-md);
+            background: var(--bg-card);
+            border-radius: 8px;
+            border-left: 4px solid var(--iran-green);
+        }
+
+        .update-time {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .update-content {
+            font-size: 1rem;
+        }
+
+        .update-content strong {
+            color: var(--iran-green);
+        }
+
+        .update-urgent {
+            border-left-color: var(--iran-red);
+        }
+
+        .update-urgent .update-time {
+            color: var(--iran-red);
+        }
+
+        /* ============================================
+           EMAIL SIGNUP SECTION
+           ============================================ */
+        .signup-section {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+            border: 1px solid var(--bg-elevated);
+            border-radius: 12px;
+            padding: var(--space-xl);
+            text-align: center;
+            margin: var(--space-xl) 0;
+        }
+
+        .signup-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+
+        .signup-desc {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .signup-form {
+            display: flex;
+            gap: var(--space-sm);
+            max-width: 450px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .signup-form input[type="email"] {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--bg-elevated);
+            border-radius: 6px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: var(--font-body);
+            transition: border-color 0.2s ease;
+        }
+
+        .signup-form input[type="email"]:focus {
+            outline: none;
+            border-color: var(--iran-green);
+        }
+
+        .signup-form input[type="email"]::placeholder {
+            color: var(--text-muted);
+        }
+
+        .signup-form button {
+            padding: 0.875rem 1.5rem;
+            background: var(--iran-green);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        .signup-form button:hover {
+            background: #1a7a30;
+        }
+
+        .signup-form button:active {
+            transform: scale(0.98);
+        }
+
+        .signup-privacy {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: var(--space-sm);
+        }
+
+        /* ============================================
+           SHARE BUTTONS
+           ============================================ */
+        .share-section {
+            text-align: center;
+            padding: var(--space-lg) 0;
+        }
+
+        .share-title {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.1s ease, opacity 0.2s ease;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-1px);
+            opacity: 0.9;
+            color: white;
+        }
+
+        .share-btn.telegram {
+            background: #0088cc;
+            color: white;
+        }
+
+        .share-btn.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .share-btn.twitter {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--bg-elevated);
+            padding: var(--space-xl) 0;
+            margin-top: var(--space-xl);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .footer-section h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-sm);
+            color: var(--text-secondary);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--iran-green);
+        }
+
+        .footer-bottom {
+            margin-top: var(--space-lg);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--bg-elevated);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .footer-legal {
+            margin-top: var(--space-xs);
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer-bottom .footer-legal a {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            display: inline;
+            padding: 0;
+        }
+
+        .footer-bottom .footer-legal a:hover {
+            color: var(--iran-green);
+        }
+
+        /* Cookie Consent Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-card);
+            border-top: 1px solid var(--bg-elevated);
+            padding: 1rem;
+            z-index: 9999;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .cookie-content p {
+            flex: 1;
+            min-width: 250px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .cookie-content a {
+            color: var(--iran-green);
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .cookie-accept {
+            background: var(--iran-green);
+            color: white;
+            border: none;
+            padding: 0.625rem 1.25rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .cookie-accept:hover {
+            background: #1a7a30;
+        }
+
+        .cookie-decline {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--text-muted);
+            padding: 0.625rem 1.25rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .cookie-decline:hover {
+            border-color: var(--text-secondary);
+            color: var(--text-primary);
+        }
+
+        .footer-slogan {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-socials a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-elevated);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.15s ease;
+        }
+
+        .footer-socials a:hover {
+            background: var(--iran-green);
+            color: white;
+        }
+
+        /* ============================================
+           RESPONSIVE ADJUSTMENTS
+           ============================================ */
+        @media (max-width: 768px) {
+            .hero {
+                padding: var(--space-xs) 0;
+            }
+
+            .hero-title {
+                font-size: 1.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.85rem;
+                margin-bottom: var(--space-xs);
+            }
+
+            .hero-meta {
+                display: none;
+            }
+
+            .section {
+                padding: var(--space-md) 0;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .signup-section {
+                padding: var(--space-md);
+            }
+
+            .update-item {
+                grid-template-columns: 1fr;
+                gap: var(--space-xs);
+                padding: var(--space-sm);
+            }
+
+            .update-content {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            .header-inner {
+                justify-content: center;
+            }
+
+            .logo-svg {
+                height: 36px;
+            }
+
+            .header-socials {
+                display: none;
+            }
+
+            .ticker {
+                display: none;
+            }
+
+            /* Mobile: Show only 2 streams (top row) */
+            .streams-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-sm);
+            }
+
+            .stream-card:nth-child(n+3) {
+                display: none;
+            }
+
+            .stream-info {
+                padding: var(--space-xs) var(--space-sm);
+            }
+
+            .stream-source {
+                font-size: 0.9rem;
+            }
+
+            .stream-live-badge {
+                font-size: 0.65rem;
+                padding: 3px 8px;
+            }
+
+            /* Show "more streams" links on mobile */
+            .mobile-more-streams {
+                display: block;
+            }
+
+            /* Larger touch targets */
+            .footer-links a,
+            .resource-card {
+                padding: var(--space-sm);
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+
+            .safety-alert {
+                font-size: 0.85rem;
+                padding: var(--space-sm);
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.25rem;
+            }
+
+            .hero-subtitle {
+                font-size: 0.8rem;
+            }
+
+            .logo-svg {
+                height: 32px;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .signup-form {
+                flex-direction: column;
+            }
+
+            .signup-form button {
+                width: 100%;
+            }
+
+            .last-updated {
+                width: 100%;
+                margin-left: 0;
+                margin-top: var(--space-xs);
+                font-size: 0.75rem;
+            }
+
+            .section-header {
+                flex-wrap: wrap;
+                gap: var(--space-xs);
+            }
+
+            .section-header .section-icon {
+                width: 4px;
+                height: 20px;
+            }
+
+            .update-time {
+                font-size: 0.7rem;
+            }
+
+            .tag-execution,
+            .tag-strike,
+            .tag-military,
+            .tag-safety,
+            .tag-update {
+                font-size: 0.6rem;
+                padding: 2px 6px;
+            }
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* Mobile sticky bar (hidden on desktop) */
+        .mobile-sticky-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 10px 16px;
+            z-index: 1000;
+            border-top: 1px solid var(--bg-elevated);
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        .mobile-live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--iran-red);
+            font-weight: 700;
+        }
+
+        .mobile-live-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--iran-red);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        .mobile-death-toll {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .mobile-bar-link {
+            color: var(--iran-green);
+            font-weight: 600;
+            padding: 6px 12px;
+            background: var(--bg-elevated);
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-sticky-bar {
+                display: flex;
+            }
+
+            /* Add padding to body so content isn't hidden behind sticky bar */
+            body {
+                padding-bottom: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER WITH LIVE INDICATOR
+         ============================================ -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 90" class="logo-svg">
+                        <defs>
+                            <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#FF2D2D"/>
+                                <stop offset="100%" style="stop-color:#DA0000"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Red live indicator bar -->
+                        <rect x="0" y="0" width="280" height="4" fill="url(#redGrad)"/>
+                        <!-- Main container -->
+                        <rect x="0" y="4" width="280" height="86" fill="#0A0A0A"/>
+                        <!-- AZADI text -->
+                        <text x="16" y="58" font-family="Arial Black, sans-serif" font-size="46" font-weight="900" fill="#FFFFFF" letter-spacing="3">AZADI</text>
+                        <!-- LIVE badge -->
+                        <rect x="190" y="22" width="75" height="44" rx="4" fill="#DA0000"/>
+                        <text x="203" y="54" font-family="Arial Black, sans-serif" font-size="26" font-weight="800" fill="#FFFFFF">LIVE</text>
+                        <!-- Green accent underline for AZADI -->
+                        <rect x="16" y="66" width="160" height="3" fill="#239F40"/>
+                    </svg>
+                </div>
+                <div class="header-right">
+                    <div class="header-socials">
+                        <a href="https://x.com/azadilivenews" target="_blank" title="Follow on X">𝕏</a>
+                        <a href="https://tiktok.com/@azadilive" target="_blank" title="Follow on TikTok">♪</a>
+                    </div>
+                    <button class="quick-exit" onclick="quickExit()" title="Quick Exit - Go to Google">
+                        ✕ EXIT
+                    </button>
+                    <div class="current-time" id="currentTime"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================
+         BREAKING NEWS TICKER
+         To update: Change the text inside ticker-text spans
+         ============================================ -->
+    <div class="ticker">
+        <div class="ticker-content">
+            <span class="ticker-label">BREAKING</span>
+            <span class="ticker-text">DAY 15 — 648 KILLED — Security forces fleeing in Bushehr, Kermanshah, Tehran — Khamenei: "Warning to Americans" — EU bans Iranian diplomats — Erfan Soltani execution Wed</span>
+            <span class="ticker-label">BREAKING</span>
+            <span class="ticker-text">DAY 15 — 648 KILLED — Security forces fleeing in Bushehr, Kermanshah, Tehran — Khamenei: "Warning to Americans" — EU bans Iranian diplomats — Erfan Soltani execution Wed</span>
+            <span class="ticker-label">BREAKING</span>
+            <span class="ticker-text">DAY 15 — 648 KILLED — Security forces fleeing in Bushehr, Kermanshah, Tehran — Khamenei: "Warning to Americans" — EU bans Iranian diplomats — Erfan Soltani execution Wed</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">آزادی — FREEDOM</h1>
+            <p class="hero-subtitle">Live coverage of Iran's historic moment. News, streams, and updates as events unfold.</p>
+            <div class="hero-meta">
+                <span>📍 Covering events across Iran</span>
+                <span>🔄 Updated continuously</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FEATURED STREAM: IRAN INTERNATIONAL
+         
+         Using specific video IDs - more reliable than channel IDs
+         ============================================ -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon"></div>
+                <h2 class="section-title">Live Coverage</h2>
+                <p class="section-subtitle">Trusted Persian-language networks covering protests and developments in real time.</p>
+            </div>
+            
+            <!-- 2x2 LIVE STREAMS GRID -->
+            <div class="streams-grid">
+                <div class="stream-card">
+                    <div class="stream-embed">
+                        <iframe 
+                            src="https://www.youtube.com/embed/5qN1dRjatv8" 
+                            allow="encrypted-media; fullscreen" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="stream-info">
+                        <div>
+                            <h3 class="stream-source">BBC Persian</h3>
+                            <p class="stream-desc">BBC Farsi 24/7</p>
+                        </div>
+                        <span class="stream-live-badge"><span class="stream-live-dot"></span> LIVE</span>
+                    </div>
+                </div>
+                <div class="stream-card">
+                    <div class="stream-embed">
+                        <iframe 
+                            src="https://www.youtube.com/embed/A92pqZQAsm8" 
+                            allow="encrypted-media; fullscreen" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="stream-info">
+                        <div>
+                            <h3 class="stream-source">Iran International</h3>
+                            <p class="stream-desc">24/7 Persian news</p>
+                        </div>
+                        <span class="stream-live-badge"><span class="stream-live-dot"></span> LIVE</span>
+                    </div>
+                </div>
+                <div class="stream-card">
+                    <div class="stream-embed">
+                        <iframe 
+                            src="https://www.youtube.com/embed/QD0pEkReMLU" 
+                            allow="encrypted-media; fullscreen" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="stream-info">
+                        <div>
+                            <h3 class="stream-source">VOA Persian</h3>
+                            <p class="stream-desc">Voice of America</p>
+                        </div>
+                        <span class="stream-live-badge"><span class="stream-live-dot"></span> LIVE</span>
+                    </div>
+                </div>
+                <div class="stream-card">
+                    <div class="stream-embed">
+                        <iframe 
+                            src="https://www.youtube.com/embed/agTCK9Uh384" 
+                            allow="encrypted-media; fullscreen" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="stream-info">
+                        <div>
+                            <h3 class="stream-source">Manoto TV</h3>
+                            <p class="stream-desc">Manoto News</p>
+                        </div>
+                        <span class="stream-live-badge"><span class="stream-live-dot"></span> LIVE</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile-only: Links to hidden streams -->
+            <div class="mobile-more-streams">
+                <p>More live streams:</p>
+                <a href="https://www.youtube.com/@VOAPersian/live" target="_blank">VOA Persian</a>
+                <a href="https://www.youtube.com/@ManotoTelevision/live" target="_blank">Manoto TV</a>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ============================================
+         LIVE RESOURCES - Map & Starlink Footage
+         ============================================ -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon" style="background: var(--iran-green);"></div>
+                <h2 class="section-title">Live Resources</h2>
+            </div>
+            
+            <div class="resources-grid">
+                <a href="https://iran.liveuamap.com/" target="_blank" class="resource-card">
+                    <div class="resource-icon">🗺️</div>
+                    <div class="resource-info">
+                        <h3>Live Protest Map</h3>
+                        <p>Real-time map of protests, clashes, and security incidents across Iran. Updated continuously.</p>
+                        <span class="resource-source">Liveuamap.com</span>
+                    </div>
+                </a>
+                
+                <a href="https://www.iranintl.com/en" target="_blank" class="resource-card">
+                    <div class="resource-icon">📡</div>
+                    <div class="resource-info">
+                        <h3>Starlink Footage</h3>
+                        <p>Videos uploaded via Starlink satellite internet — bypassing Iran's blackout. Primary source for ground footage.</p>
+                        <span class="resource-source">Iran International</span>
+                    </div>
+                </a>
+                
+                <a href="https://iranwire.com/en/" target="_blank" class="resource-card">
+                    <div class="resource-icon">📰</div>
+                    <div class="resource-info">
+                        <h3>Verified Reports</h3>
+                        <p>In-depth reporting and verified protest footage from inside Iran.</p>
+                        <span class="resource-source">IranWire</span>
+                    </div>
+                </a>
+                
+                <a href="https://twitter.com/HRANA_English" target="_blank" class="resource-card">
+                    <div class="resource-icon">📊</div>
+                    <div class="resource-info">
+                        <h3>Casualty Tracker</h3>
+                        <p>Human Rights Activists News Agency — tracking deaths, arrests, and detentions.</p>
+                        <span class="resource-source">HRANA</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         BREAKING UPDATES SECTION
+         
+         HOW TO ADD A NEW UPDATE:
+         1. Copy an update-item div
+         2. Change the time and text
+         3. Add class "update-urgent" for red urgent styling
+         
+         Newest updates should go at the TOP
+         ============================================ -->
+    <section class="section" id="updates">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon" style="background: var(--iran-red);"></div>
+                <h2 class="section-title">Breaking Updates</h2>
+                <span class="last-updated">Last updated: Jan 12, 2026 — 3:31 PM PST</span>
+            </div>
+
+            <!-- EXECUTION ALERT -->
+            <div class="execution-alert">
+                <div class="execution-icon">🚨</div>
+                <div class="execution-content">
+                    <strong>STOP THE EXECUTION — ERFAN SOLTANI (26)</strong>
+                    <p>Scheduled for execution <strong>Wednesday, January 14</strong>. First protester execution of this uprising. Arrested Jan 9-10 in Fardis/Karaj. International pressure can help.</p>
+                    <a href="https://twitter.com/search?q=ErfanSoltani" target="_blank" class="execution-action">#ErfanSoltani on X →</a>
+                </div>
+            </div>
+
+            <!-- SAFETY ALERT -->
+            <div class="safety-alert">
+                <span class="safety-icon">⚠️</span>
+                <div class="safety-content">
+                    <strong>SAFETY ALERT:</strong> Security forces attacked mourners at funeral in Abdanan (16-year-old Alireza Seidi). Avoid gathering at hospitals — IRGC continues arresting injured protesters. Regime using military GPS jammers on Starlink — place dish with clear sky view and ground-level shielding.
+                </div>
+            </div>
+            
+            <div class="updates-list">
+                
+                <!-- URGENT UPDATES -->
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-strike">STRIKE</span>
+                        <strong>DAY 15: NATIONAL SHUTDOWN UNDERWAY:</strong> Major bazaars in Tehran, Shiraz, Qazvin, and Shahr-e Kord reported closed. The largest coordinated strike action since protests began is now in effect.
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-victory">RETREAT</span>
+                        <strong>Security forces fleeing in multiple cities:</strong> Forces retreated in Bushehr (overwhelmed by crowd size) and Eslamabad-e Gharb, Kermanshah (unable to get reinforcements). Tehran's Sadeghiyeh district: armed forces fled after fierce resistance from protesters.
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-military">REGIME</span>
+                        <strong>Khamenei: "Warning to American politicians":</strong> Supreme Leader praised state-organized rallies, called protesters "domestic mercenaries" carrying out plans of "foreign enemies." Signals regime will not back down.
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-update">WHITE HOUSE</span>
+                        <strong>Iran sending "quite different" private messages:</strong> Press Secretary Karoline Leavitt confirms Tehran's public defiance differs sharply from back-channel communications to Trump administration. Airstrikes "on the table."
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-execution">KILLED</span>
+                        <strong>Erfan Faraji (18) killed in Rey:</strong> Turned 18 just one week ago. Body transported to Kahrizak, buried secretly without family notification. Another teenager murdered by the regime.
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-victory">EU ACTION</span>
+                        <strong>European Parliament bans Iranian diplomats:</strong> President Metsola: "It cannot be business as usual." All Iranian government representatives banned from EU Parliament premises.
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-execution">EXECUTION</span>
+                        <strong>Erfan Soltani (26):</strong> Sentenced to death, execution scheduled Wednesday (Jan 14). Arrested Jan 9-10 in Fardis/Karaj. Family given only 10-minute visit. First protester execution of this uprising.
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-military">CLASH RISK</span>
+                        <strong>Massive state counter-rallies:</strong> Tens of thousands at pro-regime demonstrations in Tehran today. Government declared 3 days national mourning for "martyrs" — blaming violence on "terrorists."
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-update">DIPLOMACY</span>
+                        <strong>Iran summons European envoys:</strong> UK, Germany, France, Italy ambassadors called in. Tehran showed them "rioter violence" footage, demanded they retract statements supporting protesters.
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-update">RUSSIA</span>
+                        <strong>Moscow backs Tehran:</strong> Security Council Secretary Shoigu condemned "foreign interference" in call with Iranian counterpart Larijani. Russia reaffirms strategic partnership.
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-update">CASUALTIES</span>
+                        <strong>648 killed, 10,000+ arrested:</strong> Iran Human Rights (IHRNGO) confirms at least 648 protesters killed including 9 children. HRANA reports 10,600+ detained across 186 cities in all 31 provinces.
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-update">NEGOTIATIONS</span>
+                        <strong>Iran reaches out via Oman:</strong> Trump confirms Tehran seeking talks through Omani interlocutors. But warns: "We may have to act before the meeting" if crackdown continues.
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-military">WAR THREAT</span>
+                        <strong>Iran FM: "Prepared for war":</strong> Araghchi says Iran "even more prepared than the previous war" but open to "fair negotiations with mutual respect." Communication channels with US envoy Witkoff remain open.
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-military">MILITARY</span>
+                        <strong>Iran threatens US bases:</strong> Speaker Ghalibaf warns US bases, ships, and Israel will be "legitimate targets" if Washington intervenes. Trump: "We will hit them at levels never seen before."
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-military">US RESPONSE</span>
+                        <strong>Trump weighing military options:</strong> "Strong options" including strikes and cyber ops. Briefing with advisors Tuesday (Jan 13). Plans Starlink talk with Musk.
+                    </div>
+                </div>
+
+                <div class="update-item update-urgent">
+                    <span class="update-time">BREAKING</span>
+                    <div class="update-content">
+                        <span class="tag-safety">VICTORY</span>
+                        <strong>Security forces fled Tehran:</strong> Forces overwhelmed in Sadeghiyeh district. Verified video shows forces fleeing, protesters destroying abandoned vehicles.
+                    </div>
+                </div>
+
+                <div class="update-item">
+                    <span class="update-time">Jan 11</span>
+                    <div class="update-content">
+                        <span class="tag-strike">STRIKE</span>
+                        <strong>Oil workers walk out at South Pars:</strong> Iran's largest gas field joining strike. 12 refineries affected — regime's primary revenue threatened.
+                    </div>
+                </div>
+
+                <div class="update-item">
+                    <span class="update-time">Jan 11</span>
+                    <div class="update-content">
+                        <span class="tag-safety">DEFECTIONS</span>
+                        <strong>Security forces refusing orders:</strong> Regime arrests its own personnel for refusing to fire on protesters in Kermanshah.
+                    </div>
+                </div>
+
+                <div class="update-item">
+                    <span class="update-time">Jan 11</span>
+                    <div class="update-content">
+                        <span class="tag-update">UN WARNING</span>
+                        <strong>Crimes against humanity:</strong> UN Human Rights Chief warns Iran's "systematic" killing may constitute crimes against humanity.
+                    </div>
+                </div>
+
+                <div class="update-item">
+                    <span class="update-time">Jan 11</span>
+                    <div class="update-content">
+                        <span class="tag-military">BLACKOUT</span>
+                        <strong>Internet down 84+ hours:</strong> NetBlocks confirms nationwide shutdown. Military jammers targeting Starlink with 80% signal loss.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         EMAIL SIGNUP - Netlify Forms
+         ============================================ -->
+    <section class="section">
+        <div class="container">
+            <div class="signup-section">
+                <h2 class="signup-title">Get Live Updates</h2>
+                <p class="signup-desc">Sign up for email alerts when major developments occur. We'll only email for important news.</p>
+                
+                <form name="newsletter" method="POST" data-netlify="true" action="/thank-you.html" class="signup-form">
+                    <input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" name="email" placeholder="your@email.com" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                
+                <p class="signup-privacy">No spam. Unsubscribe anytime. Your privacy matters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SHARE BUTTONS
+         ============================================ -->
+    <section class="share-section">
+        <div class="container">
+            <h3 class="share-title">Spread the Word</h3>
+            <div class="share-buttons">
+                <a href="https://t.me/share/url?url=https://azadilive.com&text=Live%20coverage%20of%20Iran%27s%20revolution%20%F0%9F%87%AE%F0%9F%87%B7" target="_blank" class="share-btn telegram">
+                    ✈️ Share on Telegram
+                </a>
+                <a href="https://wa.me/?text=Live%20coverage%20of%20Iran%27s%20revolution%20%F0%9F%87%AE%F0%9F%87%B7%20https://azadilive.com" target="_blank" class="share-btn whatsapp">
+                    💬 Share on WhatsApp
+                </a>
+                <a href="https://twitter.com/intent/tweet?text=Live%20coverage%20of%20Iran%27s%20revolution%20%F0%9F%87%AE%F0%9F%87%B7&url=https://azadilive.com" target="_blank" class="share-btn twitter">
+                    𝕏 Share on Twitter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         TWITTER/X FEEDS
+         
+         NOTE: Twitter embeds are unreliable since X rebrand
+         These may or may not load - worth trying
+         ============================================ -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon"></div>
+                <h2 class="section-title">Follow Live Updates</h2>
+            </div>
+
+            <!-- Direct Links - These actually work -->
+            <div class="social-grid">
+                
+                <!-- TWITTER/X ACCOUNTS -->
+                <div class="social-card">
+                    <div class="social-card-header">
+                        <span class="social-platform">𝕏 / Twitter — Key Accounts</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://twitter.com/IranIntl_En" target="_blank" class="social-link">
+                            <div class="social-link-icon">📰</div>
+                            <div class="social-link-info">
+                                <h4>@IranIntl_En</h4>
+                                <p>Iran International English</p>
+                            </div>
+                        </a>
+                        <a href="https://twitter.com/BBCPersian" target="_blank" class="social-link">
+                            <div class="social-link-icon">📰</div>
+                            <div class="social-link-info">
+                                <h4>@BBCPersian</h4>
+                                <p>BBC Persian Service</p>
+                            </div>
+                        </a>
+                        <a href="https://twitter.com/ManotoNews" target="_blank" class="social-link">
+                            <div class="social-link-icon">📰</div>
+                            <div class="social-link-info">
+                                <h4>@ManotoNews</h4>
+                                <p>Manoto Television</p>
+                            </div>
+                        </a>
+                        <a href="https://twitter.com/search?q=%23IranRevolution&src=typed_query&f=live" target="_blank" class="social-link">
+                            <div class="social-link-icon">#</div>
+                            <div class="social-link-info">
+                                <h4>#IranRevolution</h4>
+                                <p>Live hashtag feed</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TELEGRAM CHANNELS -->
+                <div class="social-card">
+                    <div class="social-card-header">
+                        <span class="social-platform">Telegram Channels</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://t.me/iranintl" target="_blank" class="social-link">
+                            <div class="social-link-icon">✈️</div>
+                            <div class="social-link-info">
+                                <h4>Iran International</h4>
+                                <p>Official news channel</p>
+                            </div>
+                        </a>
+                        <a href="https://t.me/bbcpersian" target="_blank" class="social-link">
+                            <div class="social-link-icon">✈️</div>
+                            <div class="social-link-info">
+                                <h4>BBC Persian</h4>
+                                <p>BBC Farsi updates</p>
+                            </div>
+                        </a>
+                        <a href="https://t.me/VOAIran" target="_blank" class="social-link">
+                            <div class="social-link-icon">✈️</div>
+                            <div class="social-link-info">
+                                <h4>VOA Persian</h4>
+                                <p>Voice of America</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-section">
+                    <h4>More Iran Coverage</h4>
+                    <div class="footer-links">
+                        <a href="https://www.iranintl.com/en" target="_blank">Iran International</a>
+                        <a href="https://iranwire.com" target="_blank">IranWire</a>
+                        <a href="https://www.bbc.com/persian" target="_blank">BBC Persian</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Key Hashtags</h4>
+                    <div class="footer-links">
+                        <a href="https://twitter.com/search?q=%23Iran" target="_blank">#Iran</a>
+                        <a href="https://twitter.com/search?q=%23IranRevolution" target="_blank">#IranRevolution</a>
+                        <a href="https://twitter.com/search?q=%23Azadi" target="_blank">#Azadi</a>
+                        <a href="https://twitter.com/search?q=%23MahsaAmini" target="_blank">#MahsaAmini</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>🛡️ Stay Safe Online</h4>
+                    <div class="footer-links">
+                        <a href="https://signal.org" target="_blank">Signal — Encrypted messaging, verified safe</a>
+                        <a href="https://www.torproject.org" target="_blank">Tor Browser — Anonymous browsing, defeats tracking</a>
+                        <a href="https://psiphon.ca" target="_blank">Psiphon — Bypass censorship, free & fast</a>
+                        <a href="https://lantern.io" target="_blank">Lantern — Fast VPN, works under heavy blocks</a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-socials">
+                    <a href="https://x.com/azadilivenews" target="_blank" title="Follow on X">𝕏 @azadilivenews</a>
+                    <a href="https://tiktok.com/@azadilive" target="_blank" title="Follow on TikTok">♪ @azadilive</a>
+                </div>
+                <p class="footer-slogan">زن، زندگی، آزادی — Woman, Life, Freedom</p>
+                <p>© 2026 AzadiLive.com — Information wants to be free</p>
+                <p class="footer-legal"><a href="/privacy.html">Privacy Policy</a> · <a href="/contact.html">Contact</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         COOKIE CONSENT BANNER
+         ============================================ -->
+    <div id="cookieBanner" class="cookie-banner" style="display: none;">
+        <div class="cookie-content">
+            <p>We use cookies to improve your experience and analyze site traffic. By clicking "Accept," you consent to our use of cookies. <a href="/privacy.html">Privacy Policy</a></p>
+            <div class="cookie-buttons">
+                <button onclick="acceptCookies()" class="cookie-accept">Accept</button>
+                <button onclick="declineCookies()" class="cookie-decline">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    
+    <script>
+        // Update current time display
+        function updateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'short', 
+                month: 'short', 
+                day: 'numeric',
+                hour: '2-digit', 
+                minute: '2-digit',
+                timeZoneName: 'short'
+            };
+            document.getElementById('currentTime').textContent = now.toLocaleDateString('en-US', options);
+        }
+        
+        updateTime();
+        setInterval(updateTime, 60000);
+
+        // Quick Exit - Safety feature for users in Iran
+        // Immediately redirects to Google and replaces history
+        function quickExit() {
+            // Replace current history entry so back button won't return here
+            window.location.replace('https://www.google.com');
+        }
+
+        // Keyboard shortcut: Press ESC to quick exit
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                quickExit();
+            }
+        });
+
+        // Cookie Consent Functions
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        // Show cookie banner if no consent stored
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookieBanner').style.display = 'block';
+        }
+    </script>
+
+    <!-- Mobile-only sticky bottom bar -->
+    <div class="mobile-sticky-bar">
+        <span class="mobile-live-indicator"><span class="mobile-live-dot"></span> LIVE</span>
+        <span class="mobile-death-toll">648 killed</span>
+        <a href="#updates" class="mobile-bar-link">Updates ↓</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — AZADI LIVE</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --iran-green: #239F40;
+            --iran-red: #DA0000;
+            --bg-primary: #0A0A0A;
+            --bg-secondary: #141414;
+            --bg-card: #1A1A1A;
+            --text-primary: #F5F5F5;
+            --text-secondary: #A0A0A0;
+            --font-display: 'Oswald', sans-serif;
+            --font-body: 'Source Sans 3', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: var(--bg-secondary);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--bg-card);
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            background: var(--iran-red);
+            color: white;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .back-link {
+            color: var(--iran-green);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-cards {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--bg-secondary);
+        }
+
+        .contact-card h2 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--iran-green);
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-card a.email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.75rem 1.25rem;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .contact-card a.email:hover {
+            background: var(--bg-primary);
+            color: var(--iran-green);
+        }
+
+        .social-section {
+            margin-top: 2.5rem;
+        }
+
+        .social-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: var(--bg-card);
+            border-radius: 6px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .social-link:hover {
+            background: var(--bg-secondary);
+            color: var(--iran-green);
+        }
+
+        .note {
+            margin-top: 2.5rem;
+            padding: 1.25rem;
+            background: rgba(35, 159, 64, 0.1);
+            border-left: 3px solid var(--iran-green);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .note p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .footer {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--bg-card);
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .header-content {
+                flex-direction: column;
+                gap: 0.75rem;
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="/" class="logo">AZADI <span>LIVE</span></a>
+            <a href="/" class="back-link">← Back to Live Coverage</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Contact Us</h1>
+        <p class="intro">Have a news tip, question, or feedback? Reach out using the appropriate channel below.</p>
+
+        <div class="contact-cards">
+            <div class="contact-card">
+                <h2>📰 News Tips & Reports</h2>
+                <p>Submit verified information, footage, or breaking news tips about events in Iran. We verify all submissions before publishing.</p>
+                <a href="mailto:news@azadilive.com" class="email">✉️ news@azadilive.com</a>
+            </div>
+
+            <div class="contact-card">
+                <h2>💬 General Support</h2>
+                <p>Questions about the site, privacy concerns, newsletter issues, or general feedback.</p>
+                <a href="mailto:support@azadilive.com" class="email">✉️ support@azadilive.com</a>
+            </div>
+        </div>
+
+        <div class="social-section">
+            <h2>Follow Us</h2>
+            <div class="social-links">
+                <a href="https://x.com/azadilivenews" target="_blank" class="social-link">𝕏 @azadilivenews</a>
+                <a href="https://tiktok.com/@azadilive" target="_blank" class="social-link">♪ @azadilive</a>
+            </div>
+        </div>
+
+        <div class="note">
+            <p><strong>Safety Notice:</strong> If you are in Iran or a sensitive location, please use secure communication methods. Consider using a VPN and encrypted email services when contacting us with sensitive information.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 AzadiLive.com — Information wants to be free</p>
+        <p class="footer-links">
+            <a href="/privacy.html">Privacy Policy</a> · 
+            <a href="/contact.html">Contact</a>
+        </p>
+    </footer>
+</body>
+</html>
